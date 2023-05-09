@@ -24,7 +24,6 @@ const options = {
       window.alert("Please choose a date in the future");
     } else {
       selectedDate = selectedDates[0].getTime();
-      console.log(selectedDate);
       refs.dataStart.disabled = false;
       clearInterval(timer.intervalId);
       timer.isActive = false;
