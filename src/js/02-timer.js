@@ -10,16 +10,16 @@ const refs = {
     dataMinutes: document.querySelector('span[data-minutes]'),
     dataSeconds: document.querySelector('span[data-seconds]'),
 }
-let selectedDate = null;
+ 
 refs.dataStart.disabled = true;
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  
+  selectedDate: null,
   onClose(selectedDates) {
-console.log(selectedDates);
+
     if (selectedDates[0].getTime() < Date.now()) {
       window.alert("Please choose a date in the future");
     } else {
