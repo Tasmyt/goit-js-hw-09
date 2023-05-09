@@ -17,18 +17,19 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  
+  selectedDate: null,
   onClose(selectedDates) {
 
     if (selectedDates[0].getTime() < Date.now()) {
       window.alert("Please choose a date in the future");
     } else {
       selectedDate = selectedDates[0].getTime();
+      console.log(selectedDate);
       refs.dataStart.disabled = false;
       clearInterval(timer.intervalId);
       timer.isActive = false;
     }
-    return selectedDate;
+    
   },
 };
 
