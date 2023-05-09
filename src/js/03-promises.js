@@ -15,7 +15,7 @@ function onCreatePromise(evt) {
   let Amount = Number(refs.dataAmount.value);
 
   for (let i = 1; i <= Amount; i += 1) {
-    Delay += Step;
+    
     createPromise(i, Delay)
       .then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -23,7 +23,7 @@ function onCreatePromise(evt) {
       .catch(({ position, delay }) => {
     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
-  
+  Delay += Step;
   }
 }
 
